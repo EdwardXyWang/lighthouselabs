@@ -1,14 +1,17 @@
-// The second argument/parameter is expected to be a function
-function findWaldo(arr, found) {
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] === "Waldo") {
-      found(i);   // execute callback
-    }
-  }
+// var a = ["a", "b", "c"];
+
+// a.forEach(function(element) {
+//     console.log(element);
+// });
+
+// function sum(a,b) {
+//   return a+b;
+// }
+var test = function sum(a,b) {
+  return a+b;
 }
 
-function actionWhenFound(i) {
-  console.log("Found him!", 'The position is', i);
-}
-
-findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+// console.log(test(1,2));
+// console.log(sum(1,2));
+// console.log(sum.name);
+console.log(typeof test);
