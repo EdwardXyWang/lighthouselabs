@@ -1,17 +1,5 @@
-// var a = ["a", "b", "c"];
-
-// a.forEach(function(element) {
-//     console.log(element);
-// });
-
-// function sum(a,b) {
-//   return a+b;
-// }
-var test = function sum(a,b) {
-  return a+b;
-}
-
-// console.log(test(1,2));
-// console.log(sum(1,2));
-// console.log(sum.name);
-console.log(typeof test);
+var numbers = [1, 2, 3, 4, 5, 7, 10, 14, 17, 18];
+var evens = numbers.filter(function(num) {
+  return (num % 2 == 0);
+});
+console.log("Subset of even numbers:", evens);
