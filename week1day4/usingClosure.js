@@ -29,3 +29,27 @@ console.log(loadedDie());  // last 5
 console.log(loadedDie());  // new start
 console.log(loadedDie());
 console.log(loadedDie());
+// second part
+var countdownGenerator = function (x) {
+  return function () {
+    console.log(x--);
+  }
+};
+
+var countdown = countdownGenerator(3);
+countdown(); // T-minus 3...
+countdown(); // T-minus 2...
+countdown(); // T-minus 1...
+countdown(); // Blast Off!
+countdown(); // Rockets already gone, bub!
+countdown(); // Rockets already gone, bub!
+
+
+
+
+
+
+
+
+
+
