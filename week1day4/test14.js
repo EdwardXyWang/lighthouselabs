@@ -59,25 +59,57 @@
 // console.log("ourMap returned: ", returnMapVal);
 
 // --------------------------------------------------
-var list = ["anaheim", "boston", "chicago", "detroit"];
+// var list = ["anaheim", "boston", "chicago", "detroit"];
 
-//modifier - callback
-//callback - function that is executed in response to an event
-function printCity(city) {
-  console.log("The city is: " + city);
-  // return "The city is: " + city;
+// //modifier - callback
+// //callback - function that is executed in response to an event
+// function printCity(city) {
+//   console.log("The city is: " + city);
+//   // return "The city is: " + city;
+// }
+
+// var a = list.forEach(printCity);
+
+// var b = list.map(printCity);
+
+// console.log(a);
+// console.log(b);
+// console.log(list.forEach(printCity));
+
+function xPrinterMaker(x)
+{
+  return function xPrinter()
+  {
+    console.log('Value of x is: '+ x);
+  }
 }
 
-var a = list.forEach(printCity);
 
-var b = list.map(printCity);
+var print5 = xPrinterMaker(5);
 
-console.log(a);
-console.log(b);
-console.log(list.forEach(printCity));
+console.log(print5());
+console.log(print5());
+console.log(print5());
+console.log(print5());
 
 
+var foo = function outerFunction() {
+  console.log('running outerFunction')
+  var x = 10;
 
+  return function innerFunction() {
+    console.log('Running innerFunction')
+    console.log("Value of x is: " + x);
+  }
+}();
+
+foo;
+console.log('');
+console.log(foo);
+console.log(' ');
+foo();
+console.log(' ');
+console.log(foo());
 
 
 
