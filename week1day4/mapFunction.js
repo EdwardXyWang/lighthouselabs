@@ -1,3 +1,4 @@
+// given a list, myMap generate a new array to store initials of each string.
 var testArray = ["ground", "control", "to", "major", "tom"];
 
 function myMap(testArr, func){
@@ -13,9 +14,3 @@ function myFunc(word) {
 }
 
 console.log(myMap(testArray, myFunc));
-
-// console.log(myMap(testArray));
-// console.log(returnArray);
-// console.log(myMap(testArray, function (testArray) {
-//   return testArray.length;
-// }));
