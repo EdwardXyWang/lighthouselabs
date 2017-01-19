@@ -1,0 +1,14 @@
+<h1>All Kittens</h1>
+<p>
+  <a href="/kittens/new">New kitten</a>
+</p>
+<% kittens.forEach(kitten => { %>
+  <h2>
+    <a href="/kittens/<%= kitten.id %>"><%= kitten.name %></a>
+  </h2>
+  <form method="post" action="/kittens/<%= kitten.id %>/delete">
+    <p>
+      <button>Explode <%= kitten.name %></button>
+    </p>
+  </form>
+<% }) %>

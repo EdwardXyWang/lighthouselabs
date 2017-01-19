@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>This is title.</title>
+</head>
+<body>
+<% for (let key in urls) {%>
+  <form action="/urls/<%= key %>/update" method="POST" style="margin:150px;">
+    <label for="longURL">The short URL is : <%= key %></label>
+    <input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px">
+    <input type="submit" value="Update">
+  </form>
+<% }%>
+</body>
+</html>

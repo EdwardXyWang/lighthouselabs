@@ -76,40 +76,69 @@
 // console.log(b);
 // console.log(list.forEach(printCity));
 
-function xPrinterMaker(x)
+// function xPrinterMaker(x)
+// {
+//   return function xPrinter()
+//   {
+//     console.log('Value of x is: '+ x);
+//   }
+// }
+
+
+// var print5 = xPrinterMaker(5);
+
+// console.log(print5());
+// console.log(print5());
+// console.log(print5());
+// console.log(print5());
+
+
+// var foo = function outerFunction() {
+//   console.log('running outerFunction')
+//   var x = 10;
+
+//   return function innerFunction() {
+//     console.log('Running innerFunction')
+//     console.log("Value of x is: " + x);
+//   }
+// }();
+
+// foo;
+// console.log('');
+// console.log(foo);
+// console.log(' ');
+// foo();
+// console.log(' ');
+// console.log(foo());
+
+// min/max number in an array
+var numbers = [5, 6, 2, 3, 7];
+
+// using Math.min/Math.max apply
+var max = Math.max.apply(null,numbers);
+// This about equal to Math.max(numbers[0], ...)
+// or Math.max(5, 6, ...)
+
+var min = Math.min.apply(null, numbers);
+console.log(max);
+console.log(min);
+
+
+function Thing(stuff)
 {
-  return function xPrinter()
-  {
-    console.log('Value of x is: '+ x);
-  }
+  this.stuff = stuff;
+}
+
+Thing.prototype.foo = function foo()
+{
+  console.log(this.stuff);
 }
 
 
-var print5 = xPrinterMaker(5);
+var x = new Thing('asdasdasdasd');
 
-console.log(print5());
-console.log(print5());
-console.log(print5());
-console.log(print5());
+x.foo.call({stuff:123});
 
-
-var foo = function outerFunction() {
-  console.log('running outerFunction')
-  var x = 10;
-
-  return function innerFunction() {
-    console.log('Running innerFunction')
-    console.log("Value of x is: " + x);
-  }
-}();
-
-foo;
-console.log('');
-console.log(foo);
-console.log(' ');
-foo();
-console.log(' ');
-console.log(foo());
 
 
 

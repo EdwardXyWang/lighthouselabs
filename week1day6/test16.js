@@ -1,40 +1,23 @@
-// var str = '{"a":1, "b":2, "foo":"bar"}'; // string version of a JS Object
-// var obj = JSON.parse(str);
-
-// // console.log(str);
-// // console.log(typeof obj);     // an Object that has been deserialized
-
-// delete obj.foo;       // modify the object
-// var objIfy = JSON.stringify(obj);  // serialize it back to a string
-
-// console.log(typeof objIfy);
-// console.log(objIfy);
-// -------------------------------
-
-// var fs = require("fs");
-// // console.log(fs);
+var fs = require("fs");
+// console.log(fs);
 
 // var filePath = "./test_sync.txt";
 // var fileData = "Testing synchronous file write.\n";
 
-// fs.writeFileSync(filePath, fileData);
+// var test = fs.writeFileSync(filePath, fileData);
 // console.log("successfully wrote to", filePath);
 
+var filePath = "./test_async.txt";
+var fileData = "Testing asynchronous file write.\n";
 
-// var fs = require("fs");
-
-// var filePath = "./test_async.txt";
-// var fileData = "Testing asynchronous file write.\n";
-
-// fs.writeFile(filePath, fileData, function(err) {
-//   if (err) {
-//     throw err;
-//   }
-//   console.log("Successfully wrote to", filePath);
-// });
-
-
-
+const test = fs.writeFile(filePath, fileData, function(err) {
+  if (err) {
+    throw err;
+  }
+  console.log("Successfully wrote to", filePath);
+});
+console.log(typeof test);
+console.log(test);
 
 
 // function f() {
@@ -75,7 +58,3 @@
 // console.log(changeStuff(num, obj1, obj2));
 
 
-var leftpad = require('leftpad');
-var pg = require('pg');
-
-console.log(leftpad(5, 10));

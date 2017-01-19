@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TinyApp</title>
+</head>
+<body>
+    <!-- Add your EJS code here -->
+    <ul>
+    <% for (let key in urls) {%>
+    <li>Short name for <%= key %>: <%= urls[key] %></li>
+    <% } %>
+    </ul>
+    <% for (let key in urls) {%>
+    <a href = '/urls/urls_show'> Edit </a>
+    <form method="post" action="/urls/<%= key %>/delete">
+    <p>
+      Delete <%= urls[key] %> </br>
+      <button>Delete</button>
+    </p>
+    </form>
+    <% } %>
+</body>
+</html>
